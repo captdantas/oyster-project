@@ -33,8 +33,11 @@ public class ChatDetailScript : MonoBehaviour {
 		}
 	}
 
-	public void writeMessage(string message) {
-		chatContent.text += message + "\n";
+	public void writeMessage(string message, bool enter) {
+		chatContent.text += message;
+		if (enter) {
+			chatContent.text += "\n";
+		}
 		
 		if (SaveChats.chats == null) {
 			SaveChats.chats = new Dictionary<string, ArrayList>();

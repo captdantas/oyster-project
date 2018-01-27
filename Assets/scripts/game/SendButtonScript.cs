@@ -10,7 +10,7 @@ public class SendButtonScript : MonoBehaviour {
 
 	public void SendText() {
 		ChatDetailScript chatDetailScript = chatDetail.GetComponent<ChatDetailScript>();
-		chatDetailScript.writeMessage(InputField.text);
+		chatDetailScript.writeMessage(InputField.text, true);
 		InputField.text = "";
 	}
 }
