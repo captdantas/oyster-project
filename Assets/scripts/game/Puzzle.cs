@@ -141,7 +141,7 @@ public class Puzzle {
 			result = "";
 		else if (text.Equals("Y"))
 			result = "";
-			
+
 		return result;
 	}
 

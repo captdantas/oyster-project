@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class ChatDetailScript : MonoBehaviour {
 
+	public GameObject gameObject;
+
+	private CharacterModel character;
+
+	bool isLoaded = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,6 +17,13 @@ public class ChatDetailScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (!isLoaded) {
+			// GetComponent<Sprite>().
+			isLoaded = true;
+		}
+	}
+
+	public void ReceiveModel(CharacterModel characterModel) {
+		character = characterModel;
 	}
 }
