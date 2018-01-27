@@ -9,7 +9,12 @@ public class SendButtonScript : MonoBehaviour {
 	public GameObject content;
 
 	public void SendText() {
-		Debug.Log(InputField.text);
+		Text text = content.GetComponent<Text>();
+		text.text += InputField.text + "\n";
 		InputField.text = "";
+
+		TimeScript.ReduceTime();
+
+		Debug.Log(TimeScript.TIME_LEFT);
 	}
 }

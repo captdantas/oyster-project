@@ -11,7 +11,7 @@ public class CharacterScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		switch(transform.root.name) {
+		switch(transform.name) {
 			case "Character1":
 			characterModel = new Character1();
 			break;

@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChatDetailScript : MonoBehaviour {
+public class ChatContentScript : MonoBehaviour {
 
-	public GameObject headerBar;
 	public GameObject chatContent;
-	public GameObject footerBar;
-
-	private CharacterModel character;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +17,6 @@ public class ChatDetailScript : MonoBehaviour {
 		
 	}
 
-	public void ReceiveModel(CharacterModel characterModel) {
-		character = characterModel;
+	public void InsertTextInChat(string text) {
 	}
 }
