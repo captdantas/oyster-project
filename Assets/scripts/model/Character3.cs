@@ -5,8 +5,8 @@ using UnityEngine;
 public class Character3 : CharacterModel {
 
 	public Character3() {
-		name = "";
-		job = "";
+		name = "Clark K";
+		job = "Specialist";
 		imagePath = "";
 	}
 }

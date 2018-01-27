@@ -6,15 +6,11 @@ using UnityEngine.UI;
 public class SendButtonScript : MonoBehaviour {
 
 	public InputField InputField;
-	public GameObject content;
+	public GameObject chatDetail;
 
 	public void SendText() {
-		Text text = content.GetComponent<Text>();
-		text.text += InputField.text + "\n";
+		ChatDetailScript chatDetailScript = chatDetail.GetComponent<ChatDetailScript>();
+		chatDetailScript.writeMessage(InputField.text);
 		InputField.text = "";
-
-		TimeScript.ReduceTime();
-
-		Debug.Log(TimeScript.TIME_LEFT);
 	}
 }

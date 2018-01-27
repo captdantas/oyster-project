@@ -5,8 +5,9 @@ using UnityEngine;
 public class Character1 : CharacterModel {
 
 	public Character1() {
-		name = "";
-		job = "";
+		name = "Vona";
+		job = "Security Chief";
 		imagePath = "";
+		chatMessages = new ArrayList();
 	}
 }

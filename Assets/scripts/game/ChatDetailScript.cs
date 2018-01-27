@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ChatDetailScript : MonoBehaviour {
 
 	public GameObject headerBar;
-	public GameObject chatContent;
+	public Text chatContent;
 	public GameObject footerBar;
 
 	private CharacterModel character;
@@ -23,5 +23,34 @@ public class ChatDetailScript : MonoBehaviour {
 
 	public void ReceiveModel(CharacterModel characterModel) {
 		character = characterModel;
+		chatContent.text = "";
+
+		ArrayList messagens = new ArrayList();
+		if (SaveChats.chats.TryGetValue(characterModel.name, out messagens)) {
+			foreach (string message in messagens) {
+				chatContent.text += message + "\n";
+			}
+		}
+	}
+
+	public void writeMessage(string message) {
+		chatContent.text += message + "\n";
+		
+		if (SaveChats.chats == null) {
+			SaveChats.chats = new Dictionary<string, ArrayList>();
+		}
+
+		ArrayList messagens = new ArrayList();
+		if (SaveChats.chats.TryGetValue(character.name, out messagens)) {
+			messagens.Add(message);
+			SaveChats.chats.Remove(character.name);
+			SaveChats.chats.Add(character.name, messagens);
+		} else {
+			messagens = new ArrayList();
+			messagens.Add(message);
+			SaveChats.chats.Add(character.name, messagens);
+		}
+
+		TimeScript.ReduceTime();
 	}
 }
