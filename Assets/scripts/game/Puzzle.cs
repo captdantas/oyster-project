@@ -2,42 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cipher : MonoBehaviour {
+public class Puzzle {
 
-	public static string cipherVeryEasy(string text) {
+	public static string CipherVeryEasy(string text) {
+		text = text.ToUpper();
 		string result = "";
 
 		foreach (char letter in text) {
-			int unicode = ((int)letter);
+			if (!letter.Equals(" ")) {
+				int unicode = ((int)letter);
 
-			if (unicode < 65 || unicode > 90)
-				return "ERROR";
-			else
-				unicode += 1;
+				if (unicode < 65 || unicode > 90)
+					return "ERROR";
+				else
+					unicode += 1;
 
-			if (unicode > 90)
-				unicode = 65;
+				if (unicode > 90)
+					unicode = 65;
 
-			result += (char) unicode;
+				result += (char) unicode;
+			}
 		}
 		return result;
 	}
 
-	public static string cipherEasy(string text) {
+	public static string CipherEasy(string text) {
+		text = text.ToUpper();
 		string result = "";
 
 		foreach (char letter in text) {
-			int unicode = ((int)letter);
+			if (!letter.Equals(" ")) {
+				int unicode = ((int)letter);
 
-			if (unicode < 65 || unicode > 90)
-				return "ERROR";
+				if (unicode < 65 || unicode > 90)
+					return "ERROR";
 
-			result += unicode + " ";
+				result += unicode + " ";
+			}
 		}
 		return result;
 	}
 
-	public static string cipherMedium(string text) {
+	public static string CipherMedium(string text) {
+		text = text.ToUpper();
 		string result = "";
 
 		foreach (char letter in text) {
@@ -125,7 +132,20 @@ public class Cipher : MonoBehaviour {
 		return result;
 	}
 
-	public void openLink(string url) {
+	public static string cipherHard(string text) {
+		text = text.ToUpper();
+
+		string result = "";
+
+		if(text.Equals("X"))
+			result = "";
+		else if (text.Equals("Y"))
+			result = "";
+			
+		return result;
+	}
+
+	public static void OpenLink(string url) {
 		Application.OpenURL(url);
 	}
 }

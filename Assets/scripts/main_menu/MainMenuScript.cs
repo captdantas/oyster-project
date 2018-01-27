@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class MainMenuScript : MonoBehaviour {
 
 	public void BtnClickStart() {
-		Application.LoadLevel(1);
+		SceneManager.LoadScene(1);
 	}
 
 	public void BtnClickCredits() {
-		Application.LoadLevel(4);
+		SceneManager.LoadScene(4);
 	}
 
 	public void BtnClickExit() {
