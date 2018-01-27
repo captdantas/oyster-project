@@ -4,33 +4,6 @@ using UnityEngine;
 
 public class Cipher : MonoBehaviour {
 
-	public static string cipher(CipherType cipherType, string text) {
-		switch(cipherType) {
-			case CipherType.VERY_EASY:
-				cipherVeryEasy(text);
-			break;
-
-			case CipherType.EASY:
-				cipherEasy(text);
-			break;
-
-			case CipherType.MEDIUM:
-				cipherMedium(text);
-			break;
-
-			case CipherType.HARD:
-			break;
-
-			case CipherType.VERY_HARD:
-			break;
-
-			case CipherType.EXTREME:
-			break;
-		}
-
-		return "";
-	}
-
 	public static string cipherVeryEasy(string text) {
 		string result = "";
 
@@ -152,13 +125,7 @@ public class Cipher : MonoBehaviour {
 		return result;
 	}
 
-
-	public enum CipherType {
-		VERY_EASY,
-		EASY,
-		MEDIUM,
-		HARD,
-		VERY_HARD,
-		EXTREME
+	public void openLink(string url) {
+		Application.OpenURL(url);
 	}
 }
