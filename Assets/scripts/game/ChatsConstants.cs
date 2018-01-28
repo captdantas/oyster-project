@@ -20,6 +20,7 @@ public class Constants {
 	public static bool CHARACTER_3_ENDING3 = false;
 	public static bool CHARACTER_3_DEATH = false;
 
+
 	public static bool CHARACTER_4_ENDING1 = false;
 	public static bool CHARACTER_4_ENDING2 = false;
 	public static bool CHARACTER_4_ENDING3 = false;
