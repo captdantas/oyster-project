@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 140237305}
   - component: {fileID: 140237307}
   m_Layer: 0
-  m_Name: char1ending
+  m_Name: clark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 433900864}
   - component: {fileID: 433900866}
   m_Layer: 0
-  m_Name: char2ending
+  m_Name: vona
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 1387177368}
   - component: {fileID: 1387177370}
   m_Layer: 0
-  m_Name: char2ending_
+  m_Name: helius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -891,12 +891,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 2
-  m_Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum."
+  m_Text: "Created during Global Game Jam2018.\n\nAtilla Gallio\nPedro Gomes\nM\xE1rcio
+    Dantas.\n\nThanks for playing"
 --- !u!222 &1728162069
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -927,7 +923,7 @@ GameObject:
   - component: {fileID: 1770895090}
   - component: {fileID: 1770895092}
   m_Layer: 0
-  m_Name: char3ending
+  m_Name: gata
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1063,6 +1059,50 @@ PolygonCollider2D:
       - {x: -0.35999998, y: 1.13}
       - {x: -0.44, y: 1.1}
       - {x: -0.42, y: 1.09}
+--- !u!1 &1778133308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1778133310}
+  - component: {fileID: 1778133309}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1778133309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1778133308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60e41e532d89024897491351bd62a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vonaface: {fileID: 433900863}
+  heliosface: {fileID: 1387177367}
+  clark: {fileID: 140237304}
+  gata: {fileID: 1770895089}
+--- !u!4 &1778133310
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1778133308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.5552063, y: 4.0903482, z: -0.32327884}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1977693234
 GameObject:
   m_ObjectHideFlags: 0
