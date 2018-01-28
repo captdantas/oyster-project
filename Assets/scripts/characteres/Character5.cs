@@ -7,6 +7,6 @@ public class Character5 : CharacterModel {
 	public Character5() {
 		name = "Incognito";
 		job = "Incognito";
-		imagePath = "";
+		imagePath = "/Assets/Icones Personagens/Character5/Character5.png";
 	}
 }
