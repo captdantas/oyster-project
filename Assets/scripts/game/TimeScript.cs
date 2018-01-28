@@ -8,8 +8,6 @@ public class TimeScript {
 
 	public static int DEFAULT_TIME_REDUCE = 2;
 
-	public static bool BATTERY = false;
-
 	public static void ReduceTime() {
 		TIME_LEFT -= DEFAULT_TIME_REDUCE;
 	}

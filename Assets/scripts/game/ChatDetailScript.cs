@@ -83,24 +83,22 @@ public class ChatDetailScript : MonoBehaviour {
 			break;
 		}
 
-		message = message.ToUpper();
-
 		if (user) {
 			switch(character.name) {
 			case "Vona":
-				Vona(message, currentMessage.number);
+				Vona(message.ToUpper(), currentMessage.number);
 			break;
 			case "Helgos":
-				Helgos(message, currentMessage.number);
+				Helgos(message.ToUpper(), currentMessage.number);
 			break;
 			case "Clark K":
-				Clark(message, currentMessage.number);
+				Clark(message.ToUpper(), currentMessage.number);
 			break;
 			case "Ga'Taah":
-				GaTaah(message, currentMessage.number);
+				GaTaah(message.ToUpper(), currentMessage.number);
 			break;
 			case "Incognito":
-				Incognito(message, currentMessage.number);
+				Incognito(message.ToUpper(), currentMessage.number);
 			break;
 			}
 		}
@@ -177,6 +175,7 @@ public class ChatDetailScript : MonoBehaviour {
 			case 3:
 			case 4:
 			case 5:
+			case 6:
 			case 7:
 			case 8:
 			case 9:
@@ -186,9 +185,7 @@ public class ChatDetailScript : MonoBehaviour {
 			case 13:
 				message = Puzzle.CipherVeryEasy(message);
 			break;
-			case 6:
-				message = Puzzle.CipherVeryEasy(message);
-			break;
+
 			case 14:
 			case 15:
 			case 16:
