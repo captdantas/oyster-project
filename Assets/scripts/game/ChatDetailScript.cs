@@ -177,16 +177,16 @@ public class ChatDetailScript : MonoBehaviour {
 			case 15:
 			case 16:
 			case 17:
-				Constants.CHARACTER_1_DEATH = true;
+			Constants.CHARACTER_1_DEATH = true;
 			break;
 			case 18:
-				Constants.CHARACTER_1_ENDING3 = true;
+			Constants.CHARACTER_1_ENDING3 = true;
 			break;
 			case 19:
 			Constants.CHARACTER_1_ENDING1 = true;
 			break;
 			case 20:
-				Constants.CHARACTER_1_ENDING2 = true;
+			Constants.CHARACTER_1_ENDING2 = true;
 			break;
 		}
 		if (currentMessage.responses.Length == 1) {
@@ -227,7 +227,7 @@ public class ChatDetailScript : MonoBehaviour {
 			case 10:
 			break;
 			case 11:
-			break;
+			break; 
 			case 12:
 			break;
 			case 13:
@@ -237,6 +237,25 @@ public class ChatDetailScript : MonoBehaviour {
 			case 15:
 			break;
 			case 16:
+			break;
+			case 17:
+			Constants.CHARACTER_2_ENDING1 = true;
+			break;
+			case 18:
+			break;
+			case 19:
+			break;
+			case 20:
+			break;
+			case 21:
+			break;
+			case 22:
+			Constants.CHARACTER_2_ENDING2 = true;
+			break;
+			case 23:
+			Constants.CHARACTER_2_DEATH = true;
+			break;
+			case 24:
 			break;
 		}
 		if (currentMessage.responses.Length == 1) {
