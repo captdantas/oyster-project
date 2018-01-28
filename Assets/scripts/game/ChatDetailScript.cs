@@ -100,7 +100,7 @@ public class ChatDetailScript : MonoBehaviour {
 			break;
 			}
 		}
-		
+
 		chatContent.text += message;
 		if (enter) {
 			chatContent.text += "\n";
@@ -245,6 +245,31 @@ public class ChatDetailScript : MonoBehaviour {
 
 	public string Clark(string message, int number) {
 		switch(currentMessage.number) {
+			case 0:
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+			case 8:
+			case 9:
+			case 10:
+			case 11:
+			case 12:
+			case 13:
+			case 14:
+			case 15:
+			case 16:
+			case 17:
+				message = Puzzle.CipherMedium(message);
+			break;
+			case 18:
+			case 19:
+			case 20:
+				Constants.CHARACTER_3_DEATH = true;
+			break;
 		}
 
 		if (currentMessage.responses.Length == 1) {
@@ -263,6 +288,9 @@ public class ChatDetailScript : MonoBehaviour {
 
 	public string GaTaah(string message, int number) {
 		switch(currentMessage.number) {
+			default:
+				Constants.CHARACTER_4_DEATH = true;
+			break;
 		}
 
 		if (currentMessage.responses.Length == 1) {
