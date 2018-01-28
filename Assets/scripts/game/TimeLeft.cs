@@ -15,7 +15,7 @@ public class TimeLeft : MonoBehaviour {
 
 	void Update ()
 	{
-		textComp.text = TimeScript.TIME_LEFT + "Hours Left";
+		textComp.text = TimeScript.TIME_LEFT + " Hours Left";
 	}
 }
 
