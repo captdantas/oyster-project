@@ -23,9 +23,9 @@ public class Character1 : CharacterModel {
 			new Message(11, "I am feeling a little lonely, I miss my feline friends company. I wonder if they are ok.", new Response[] { new Response("", false, 12)}),
 			new Message(12, "Do you have a minute to talk? Remember that Space Dinner we always visited? I feel like I can’t even remember the taste of food... I think... I might be going crazy...", new Response[] { new Response("", true, 13), new Response("", true, 15)}),
 			new Message(13, "Oh Commander, I am so grateful for everything we did together. I have no regrets. Lived a increadible life alongside you guys. It’s been so much sime since we met, hasn’t it? The more ironic it looks, my last view is... Pretty great, I have to admit! Oh, if you find Helgos, tell him I forgive him... Can’t take that out of my mind you know...? It’s pretty bizarre.", new Response[] { new Response("", false, 14)}),
-			new Message(14, "Transmission... faili... I t..nk that’s it f... me. It’s ...od to h..r your v...ice one last t..e... Don’t ever g... up...", new Response[] { new Response("", false, 99, CharacterFlag.DEATH)}),
-			new Message(15, "The world has come to an end... I won’t make it alive, I am sorry... I think that’s our last conversation... I need this time alone, my head... It won’t let me........... Goodbye.", new Response[] { new Response("", false, 99, CharacterFlag.DEATH)}),
-			new Message(16, "I’m being chased! They are comming... TELL HELGOS THAT................................", new Response[] { new Response("", false, 99, CharacterFlag.DEATH)})
+			new Message(14, "Transmission... faili... I t..nk that’s it f... me. It’s ...od to h..r your v...ice one last t..e... Don’t ever g... up...", new Response[] { new Response("", false, 99)}),
+			new Message(15, "The world has come to an end... I won’t make it alive, I am sorry... I think that’s our last conversation... I need this time alone, my head... It won’t let me........... Goodbye.", new Response[] { new Response("", false, 99)}),
+			new Message(16, "I’m being chased! They are comming... TELL HELGOS THAT................................", new Response[] { new Response("", false, 99)})
 		};
 	}
 }

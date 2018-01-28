@@ -123,10 +123,10 @@ public class ChatDetailScript : MonoBehaviour {
 			SaveChats.chats.Add(character.name, messagens);
 		}
 
-		TimeScript.ReduceTime();
-
-		if (user)
+		if (user) {
+			TimeScript.ReduceTime();
 			userInteration = true;
+		}
 	}
 
 	IEnumerator DialogueStart() {
