@@ -7,7 +7,7 @@ public class ClickImage : MonoBehaviour {
 
 	void OnMouseDown() 
  {
-		SceneManager.LoadScene(2);
+		SceneManager.LoadScene(1);
  
  }
 }
