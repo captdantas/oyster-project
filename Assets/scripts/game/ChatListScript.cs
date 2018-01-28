@@ -26,16 +26,16 @@ public class ChatListScript : MonoBehaviour {
 	void Update () {
 
 		if (Constants.openCharacter > 1)
-			if (!character2.active) 
+			if (!character2.activeSelf) 
 				character2.SetActive(true);
 		if (Constants.openCharacter > 2)
-			if (!character3.active)
+			if (!character3.activeSelf)
 				character3.SetActive(true);
 		if (Constants.openCharacter > 3)
-			if (!character4.active)
+			if (!character4.activeSelf)
 				character4.SetActive(true);
 		if (Constants.openCharacter > 4)
-			if (!character5.active) 
+			if (!character5.activeSelf) 
 				character5.SetActive(true);
 	}
 }

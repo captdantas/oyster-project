@@ -30,10 +30,11 @@ public class ChatDetailScript : MonoBehaviour {
 			StartCoroutine("DialogueStart");  
 			initialized = false;
 		}
+	}
 
-
+	void OnDisable() {
 		if (character.name.Equals("Helgos") && currentMessage.number >= 3) {
-			if (!chatContent.IsActive() || !headerBar.active || !footerBar.active) {
+			if (!chatContent.IsActive() || !headerBar.activeSelf || !footerBar.activeSelf) {
 				Constants.CHARACTER_2_DEATH = true;
 			}
 		}
@@ -90,36 +91,19 @@ public class ChatDetailScript : MonoBehaviour {
 			switch(character.name) {
 			case "Vona":
 				switch(currentMessage.number) {
+					case 0:
+					case 1:
 					case 2:
-						message = Puzzle.CipherVeryEasy(message);
-					break;
 					case 3:
-						message = Puzzle.CipherVeryEasy(message);
-					break;
 					case 4:
-						message = Puzzle.CipherVeryEasy(message);
-					break;
 					case 5:
-						message = Puzzle.CipherVeryEasy(message);
-					break;
 					case 6:
-						message = Puzzle.CipherVeryEasy(message);
-					break;
+					case 7:
 					case 8:
-						message = Puzzle.CipherVeryEasy(message);
-					break;
 					case 9:
-						message = Puzzle.CipherVeryEasy(message);
-					break;
 					case 10:
-						message = Puzzle.CipherVeryEasy(message);
-					break;
 					case 11:
-						message = Puzzle.CipherVeryEasy(message);
-					break;
 					case 12:
-						message = Puzzle.CipherVeryEasy(message);
-					break;
 					case 13:
 						message = Puzzle.CipherVeryEasy(message);
 					break;
@@ -128,15 +112,6 @@ public class ChatDetailScript : MonoBehaviour {
 					case 16:
 						Constants.CHARACTER_1_DEATH = true;
 					break;
-				}
-				if (currentMessage.responses.Length == 1) {
-					nextMessage = currentMessage.responses[0].unlock;
-				} else {
-					if (message == currentMessage.responses[0].reponse.ToUpper()) {
-						nextMessage = currentMessage.responses[0].unlock;
-					} else if (message == currentMessage.responses[1].reponse.ToUpper()) {
-						nextMessage = currentMessage.responses[1].unlock;
-					}
 				}
 			break;
 			case "Helgos":
@@ -197,6 +172,15 @@ public class ChatDetailScript : MonoBehaviour {
 			}
 		}
 
+		if (currentMessage.responses.Length == 1) {
+			nextMessage = currentMessage.responses[0].unlock;
+		} else {
+			if (message == currentMessage.responses[0].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[0].unlock;
+			} else if (message == currentMessage.responses[1].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[1].unlock;
+			}
+		}
 		
 
 		chatContent.text += message;

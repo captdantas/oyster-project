@@ -9,8 +9,8 @@ public class Character1 : CharacterModel {
 		job = "Security Chief";
 		imagePath = "";
 		messages = new Message[] {
-			new Message(0, "Hello?! Hello!? \n Is anyone there?", new Response[] { new Response("Yes", false, 1)}),
-			new Message(1, "My God! You are alive! Do you have any idea how long I have been trying to contact someone?", new Response[] { new Response("Yes", false, 2)}),
+			new Message(0, "Hello?! Hello!? \n Is anyone there?", new Response[] { new Response("Yes", true, 1)}),
+			new Message(1, "My God! You are alive! Do you have any idea how long I have been trying to contact someone?", new Response[] { new Response("Yes", true, 2)}),
 			new Message(2, "Are getting my messages correctly? We are having transmission issues. Did you notice any difference?", new Response[] { new Response("Yes", true, 3)}),
 			new Message(3, "I couldn’t understand! Can you repeat? Your voice is getting distorted.", new Response[] { new Response("Yes", true, 4)}),
 			new Message(4, "What happened? That explosion was bizarre! I am a lot more calm now that I know our ship is fine. I have been worried that the worst had happened. I am in a strange planet, full of water and nature... Where am I?", new Response[] { new Response("Earth", false, 5)}),
