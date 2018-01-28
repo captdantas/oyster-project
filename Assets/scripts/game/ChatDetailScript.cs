@@ -170,12 +170,13 @@ public class ChatDetailScript : MonoBehaviour {
 			case 11:
 			case 12:
 			case 13:
+			case 14:
 				message = Puzzle.CipherVeryEasy(message);
 			break;
 
-			case 14:
 			case 15:
 			case 16:
+			case 17:
 				Constants.CHARACTER_1_DEATH = true;
 			break;
 		}
