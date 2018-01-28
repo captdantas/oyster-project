@@ -83,85 +83,15 @@ public class ChatDetailScript : MonoBehaviour {
 			break;
 		}
 
-
-
 		message = message.ToUpper();
 
 		if (user) {
 			switch(character.name) {
 			case "Vona":
-				switch(currentMessage.number) {
-					case 0:
-					case 1:
-					case 2:
-					case 3:
-					case 4:
-					case 5:
-					case 6:
-					case 7:
-					case 8:
-					case 9:
-					case 10:
-					case 11:
-					case 12:
-					case 13:
-						message = Puzzle.CipherVeryEasy(message);
-					break;
-					case 14:
-					case 15:
-					case 16:
-						Constants.CHARACTER_1_DEATH = true;
-					break;
-				}
+				Vona(message, currentMessage.number);
 			break;
 			case "Helgos":
-				 
-				switch(currentMessage.number) {
-					case 1:
-						if (message.Equals(currentMessage.responses[0].reponse)) {
-							TimeScript.IncreaseTime();
-						}
-					break;
-					case 2:
-						
-					break;
-					case 3:
-						
-					break;
-					case 4:
-						
-					break;
-					case 5:
-						
-					break;
-					case 6:
-						
-					break;
-					case 8:
-						
-					break;
-					case 9:
-						
-					break;
-					case 10:
-						
-					break;
-					case 11:
-						
-					break;
-					case 12:
-						
-					break;
-					case 13:
-						
-					break;
-					case 14:
-					break;
-					case 15:
-					break;
-					case 16:
-					break;
-				}
+				Helgos(message, currentMessage.number);
 			break;
 			case "Clark K":
 			break;
@@ -171,17 +101,6 @@ public class ChatDetailScript : MonoBehaviour {
 			break;
 			}
 		}
-
-		if (currentMessage.responses.Length == 1) {
-			nextMessage = currentMessage.responses[0].unlock;
-		} else {
-			if (message == currentMessage.responses[0].reponse.ToUpper()) {
-				nextMessage = currentMessage.responses[0].unlock;
-			} else if (message == currentMessage.responses[1].reponse.ToUpper()) {
-				nextMessage = currentMessage.responses[1].unlock;
-			}
-		}
-		
 
 		chatContent.text += message;
 		if (enter) {
@@ -243,6 +162,94 @@ public class ChatDetailScript : MonoBehaviour {
 				// }
 			} else if (message.number == 99) {
 
+			}
+		}
+	}
+
+	private void Vona(string message, int number) {
+		switch(number) {
+			case 0:
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 7:
+			case 8:
+			case 9:
+			case 10:
+			case 11:
+			case 12:
+			case 13:
+				message = Puzzle.CipherVeryEasy(message);
+			break;
+			case 6:
+				message = Puzzle.CipherVeryEasy(message);
+			break;
+			case 14:
+			case 15:
+			case 16:
+				Constants.CHARACTER_1_DEATH = true;
+			break;
+		}
+		if (currentMessage.responses.Length == 1) {
+			nextMessage = currentMessage.responses[0].unlock;
+		} else {
+			if (message == currentMessage.responses[0].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[0].unlock;
+			} else if (message == currentMessage.responses[1].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[1].unlock;
+			} else {
+				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
+			}
+		}
+	}
+
+	private void Helgos(string message, int number) {
+		switch(currentMessage.number) {
+			case 1:
+			if (message.Equals(currentMessage.responses[0].reponse)) {
+				TimeScript.IncreaseTime();
+			}
+			break;
+			case 2:
+			break;
+			case 3:
+			break;
+			case 4:
+			break;
+			case 5:
+			break;
+			case 6:
+			break;
+			case 8:
+			break;
+			case 9:
+			break;
+			case 10:
+			break;
+			case 11:
+			break;
+			case 12:
+			break;
+			case 13:
+			break;
+			case 14:
+			break;
+			case 15:
+			break;
+			case 16:
+			break;
+		}
+		if (currentMessage.responses.Length == 1) {
+			nextMessage = currentMessage.responses[0].unlock;
+		} else {
+			if (message == currentMessage.responses[0].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[0].unlock;
+			} else if (message == currentMessage.responses[1].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[1].unlock;
+			} else {
+				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
 			}
 		}
 	}
