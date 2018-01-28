@@ -94,10 +94,13 @@ public class ChatDetailScript : MonoBehaviour {
 				Helgos(message, currentMessage.number);
 			break;
 			case "Clark K":
+				Clark(message, currentMessage.number);
 			break;
 			case "Ga'Taah":
+				GaTaah(message, currentMessage.number);
 			break;
 			case "Incognito":
+				Incognito(message, currentMessage.number);
 			break;
 			}
 		}
@@ -252,5 +255,17 @@ public class ChatDetailScript : MonoBehaviour {
 				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
 			}
 		}
+	}
+
+	public void Clark(string message, int number) {
+
+	}
+
+	public void GaTaah(string message, int number) {
+
+	}
+
+	public void Incognito(string message, int number) {
+
 	}
 }
