@@ -7,6 +7,7 @@ public class Message  {
 	public string message;
 	public Response[] responses;
 
+	public Message() { }
 	public Message(int number, string message, Response[] responses) {
 		this.number = number;
 		this.message = message;

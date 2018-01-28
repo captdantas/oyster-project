@@ -5,5 +5,5 @@ public abstract class CharacterModel {
 	public string name;
 	public string job;
 	public string imagePath;
-	public Message[] messages;
+	public ArrayList messages;
 }

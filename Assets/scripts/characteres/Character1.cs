@@ -8,7 +8,7 @@ public class Character1 : CharacterModel {
 		name = "Vona";
 		job = "Security Chief";
 		imagePath = "";
-		messages = new Message[] {
+		messages = new ArrayList() {
 			new Message(0, "Hello?! Hello!? \n Is anyone there?", new Response[] { new Response("Yes", true, 1)}),
 			new Message(1, "My God! You are alive! Do you have any idea how long I have been trying to contact someone?", new Response[] { new Response("Yes", true, 2)}),
 			new Message(2, "Are getting my messages correctly? We are having transmission issues. Did you notice any difference?", new Response[] { new Response("Yes", true, 3)}),

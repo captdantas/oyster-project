@@ -8,7 +8,7 @@ public class Character4 : CharacterModel {
 		name = "Ga'Taah";
 		job = "Pilot";
 		imagePath = "";
-		messages = new Message[] {
+		messages = new ArrayList() {
 			new Message(0, "Hey Cap! How are you doing? So… About that Vortex… thing, yesterday... Do you actually know anything about it? In one moment everything was fine but out of nowhere… Well… I can’t really remember much, except for high noises and that… Black rift reaching for us.", new Response[] { new Response("", false, 1)}),
 			new Message(1, "That thing showed up out of nowhere… I was so scared, ended up in a strange planet with a lot of… Humans…? I thought they were Extint, well, no offense of course. After all you are the best captain we could ever have, we’re all really grateful for having you.", new Response[] { new Response("", false, 2)}),
 			new Message(2, "I’ve been thinking these days… What you REALLY think about the ‘Vonda and Helgos’ situation? Of course that she’s right not wanting to talk to him but... \n We’re a team!", new Response[] { new Response("", false, 3)}),

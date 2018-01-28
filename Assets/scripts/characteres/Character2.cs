@@ -8,7 +8,7 @@ public class Character2 : CharacterModel {
 		name = "Helgos";
 		job = "Engineer";
 		imagePath = "";
-		messages = new Message[] {
+		messages = new ArrayList() {
 			new Message(0, "I know you are there! I can see the câmeras from here. Get UP!! If you didn’t breathe this heavy, I would actually think you were dead. I can get to the ship’s Energy Storage from my cabin... And I have terrible News my friend. The battery fluid is leaking, we don’t have much time. Can you hear me??", new Response[] { new Response("Yes", false, 1)}),
 			new Message(1, "Can you tell me the Battery Model? I just can’t remember, and the fluid destroyed the box!! The others are just like it! Totally destroyed. I need it to keep up alive.", new Response[] { new Response("", true, 2)}),
 			new Message(2, "Man, if you could see the situation around here... It’s a shame that only I have the câmeras, and they don’t even have colors! Can you tell if there is a little light sparkling around there? What’s its color?", new Response[] { new Response("Red", true, 3)}),

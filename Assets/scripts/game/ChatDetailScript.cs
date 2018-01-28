@@ -15,6 +15,8 @@ public class ChatDetailScript : MonoBehaviour {
 
 	public bool initialized = false;
 
+	public bool getSaved = false;
+
 	public static int nextMessage;
 
 	public Message currentMessage;
@@ -44,12 +46,23 @@ public class ChatDetailScript : MonoBehaviour {
 		character = characterModel;
 		chatContent.text = "";
 
+		// headerBar.GetComponent<Image>().overrideSprite =  Resources.Load<Sprite>(character.imagePath);
+
 		nextMessage = 0;
 
 		ArrayList messagens = new ArrayList();
 		if (SaveChats.chats.TryGetValue(characterModel.name, out messagens)) {
 			foreach (string message in messagens) {
 				chatContent.text += message + "\n";
+				getSaved = true;
+			}
+		}
+
+		int number = 0;
+		if (SaveChats.chatsNextMessage.TryGetValue(characterModel.name, out number)) {
+			nextMessage = number;
+			for(int i = 0; i < number; i++) {
+				RemoveMessage(i - 1);
 			}
 		}
 
@@ -82,6 +95,9 @@ public class ChatDetailScript : MonoBehaviour {
 		}
 
 		if (user) {
+			TimeScript.ReduceTime();
+			userInteration = true;
+
 			switch(character.name) {
 			case "Vona":
 				message = Vona(message.ToUpper(), currentMessage.number);
@@ -99,6 +115,8 @@ public class ChatDetailScript : MonoBehaviour {
 				message = Incognito(message.ToUpper(), currentMessage.number);
 			break;
 			}
+		} else {
+			message += "\n";
 		}
 
 		chatContent.text += message;
@@ -106,6 +124,10 @@ public class ChatDetailScript : MonoBehaviour {
 			chatContent.text += "\n";
 		}
 		
+		SaveChat(message);
+	}
+
+	public void SaveChat(string message) {
 		if (SaveChats.chats == null) {
 			SaveChats.chats = new Dictionary<string, ArrayList>();
 		}
@@ -121,9 +143,16 @@ public class ChatDetailScript : MonoBehaviour {
 			SaveChats.chats.Add(character.name, messagens);
 		}
 
-		if (user) {
-			TimeScript.ReduceTime();
-			userInteration = true;
+		if (SaveChats.chatsNextMessage == null) {
+			SaveChats.chatsNextMessage = new Dictionary<string, int>();
+		}
+
+		int number = 0;
+		if (SaveChats.chatsNextMessage.TryGetValue(character.name, out number)) {
+			SaveChats.chatsNextMessage.Remove(character.name);
+			SaveChats.chatsNextMessage.Add(character.name, nextMessage);
+		} else {
+			SaveChats.chatsNextMessage.Add(character.name, nextMessage);
 		}
 	}
 
@@ -152,6 +181,23 @@ public class ChatDetailScript : MonoBehaviour {
 
 			}
 		}
+	}
+
+	private Message GetMessage(int number) {
+		foreach(Message message in character.messages) {
+			if (message.number == number)
+				return message;
+		}
+		return null;
+	}
+
+	private void RemoveMessage(int number) {
+		Message message = new Message();
+		foreach(Message messagem in character.messages) {
+			if (messagem.number == number)
+				message = messagem;
+		}
+		character.messages.Remove(message);
 	}
 
 	private string Vona(string message, int number) {
@@ -191,7 +237,7 @@ public class ChatDetailScript : MonoBehaviour {
 				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
 			}
 		}
-		return message;
+		return message + "\n";
 	}
 
 	private string Helgos(string message, int number) {
@@ -202,32 +248,25 @@ public class ChatDetailScript : MonoBehaviour {
 			}
 			break;
 			case 2:
-			break;
 			case 3:
-			break;
 			case 4:
-			break;
 			case 5:
-			break;
 			case 6:
-			break;
 			case 8:
-			break;
 			case 9:
-			break;
 			case 10:
-			break;
 			case 11:
-			break;
 			case 12:
-			break;
 			case 13:
-			break;
 			case 14:
-			break;
 			case 15:
-			break;
 			case 16:
+			case 17:
+			case 18:
+			case 19:
+			break;
+			case 20:
+				Constants.CHARACTER_2_DEATH = true;
 			break;
 		}
 		if (currentMessage.responses.Length == 1) {
@@ -241,7 +280,7 @@ public class ChatDetailScript : MonoBehaviour {
 				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
 			}
 		}
-		return message;
+		return message + "\n";
 	}
 
 	public string Clark(string message, int number) {
@@ -284,7 +323,7 @@ public class ChatDetailScript : MonoBehaviour {
 				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
 			}
 		}
-		return message;
+		return message + "\n";
 	}
 
 	public string GaTaah(string message, int number) {
@@ -305,13 +344,10 @@ public class ChatDetailScript : MonoBehaviour {
 				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
 			}
 		}
-		return message;
+		return message + "\n";
 	}
 
 	public string Incognito(string message, int number) {
-		switch(currentMessage.number) {
-		}
-
 		if (currentMessage.responses.Length == 1) {
 			nextMessage = currentMessage.responses[0].unlock;
 		} else {
@@ -323,6 +359,6 @@ public class ChatDetailScript : MonoBehaviour {
 				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
 			}
 		}
-		return message;
+		return message + "\n";
 	}
 }

@@ -8,7 +8,7 @@ public class Character3 : CharacterModel {
 		name = "Clark K";
 		job = "Specialist";
 		imagePath = "";
-		messages = new Message[] {
+		messages = new ArrayList() {
 			new Message(0, "You are receiving a new message from: Clark K. \n This message may contain unknown characters, the system is unable to translate. \n Do you want to read the message?", new Response[] { new Response("No", true, 20), new Response("Yes", true, 1)}),
 			new Message(1, "Come In! Oster Ship, do you copy? \n I’m on the Star Station next to you. \n %]+ª;/!%\\?_* \n any problems \n ]+%(?_*[!?} \n message?", new Response[] { new Response("", true, 2)}),
 			new Message(2, ";/]}!?:@/}[ \n Exploded \n ?}+\\+]ª;_+ \n All right?", new Response[] { new Response("", true, 3)}),
