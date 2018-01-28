@@ -43,6 +43,18 @@ public class ChatDetailScript : MonoBehaviour {
 	}
 
 	public void ReceiveModel(CharacterModel characterModel) {
+		  character = null;
+
+		  userInteration = false;
+
+		  initialized = false;
+
+		  getSaved = false;
+
+		   nextMessage =0 ;
+
+		  currentMessage = null;
+
 		character = characterModel;
 		chatContent.text = "";
 
@@ -71,29 +83,6 @@ public class ChatDetailScript : MonoBehaviour {
 	}
 
 	public void writeMessage(string message, bool enter, bool user) {
-		switch(character.name) {
-			case "Vona":
-				if (Constants.CHARACTER_1_DEATH)
-					return; 
-			break;
-			case "Helgos":
-				if (Constants.CHARACTER_2_DEATH)
-					return;
-			break;
-			case "Clark K":
-				if (Constants.CHARACTER_3_DEATH)
-					return;
-			break;
-			case "Ga'Taah":
-				if (Constants.CHARACTER_4_DEATH)
-					return;
-			break;
-			case "Incognito":
-				if (Constants.CHARACTER_5_DEATH)
-					return;
-			break;
-		}
-
 		if (user) {
 			TimeScript.ReduceTime();
 			userInteration = true;
@@ -383,9 +372,6 @@ public class ChatDetailScript : MonoBehaviour {
 	}
 
 	public string Incognito(string message, int number) {
-		switch(currentMessage.number) {
-		}
-
 		if (currentMessage.responses.Length == 1) {
 			nextMessage = currentMessage.responses[0].unlock;
 		} else {
@@ -398,5 +384,5 @@ public class ChatDetailScript : MonoBehaviour {
 			}
 		}
 		return message;
-}
+	}
 }
