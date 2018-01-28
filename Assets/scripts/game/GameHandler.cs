@@ -34,7 +34,6 @@ public class GameHandler : MonoBehaviour {
 	{
 
 		percentagetimeleft = TimeScript.TIME_LEFT * 100 / totalTime;
-		Debug.Log(percentagetimeleft);
 		tmp.r = 1 * percentagetimeleft/100;
 		tmp.g = 1 * percentagetimeleft/100;
 		tmp.b = 1 * percentagetimeleft/100;

@@ -179,6 +179,15 @@ public class ChatDetailScript : MonoBehaviour {
 			case 17:
 				Constants.CHARACTER_1_DEATH = true;
 			break;
+			case 18:
+				Constants.CHARACTER_1_ENDING3 = true;
+			break;
+			case 19:
+			Constants.CHARACTER_1_ENDING1 = true;
+			break;
+			case 20:
+				Constants.CHARACTER_1_ENDING2 = true;
+			break;
 		}
 		if (currentMessage.responses.Length == 1) {
 			nextMessage = currentMessage.responses[0].unlock;
