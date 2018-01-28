@@ -55,8 +55,6 @@ public class ChatDetailScript : MonoBehaviour {
 
 		if (character != null)
 			initialized = true;
-
-		// DialogueStart();
 	}
 
 	public void writeMessage(string message, bool enter, bool user) {
@@ -86,23 +84,23 @@ public class ChatDetailScript : MonoBehaviour {
 		if (user) {
 			switch(character.name) {
 			case "Vona":
-				Vona(message.ToUpper(), currentMessage.number);
+				message = Vona(message.ToUpper(), currentMessage.number);
 			break;
 			case "Helgos":
-				Helgos(message.ToUpper(), currentMessage.number);
+				message = Helgos(message.ToUpper(), currentMessage.number);
 			break;
 			case "Clark K":
-				Clark(message.ToUpper(), currentMessage.number);
+				message = Clark(message.ToUpper(), currentMessage.number);
 			break;
 			case "Ga'Taah":
-				GaTaah(message.ToUpper(), currentMessage.number);
+				message = GaTaah(message.ToUpper(), currentMessage.number);
 			break;
 			case "Incognito":
-				Incognito(message.ToUpper(), currentMessage.number);
+				message = Incognito(message.ToUpper(), currentMessage.number);
 			break;
 			}
 		}
-
+		
 		chatContent.text += message;
 		if (enter) {
 			chatContent.text += "\n";
@@ -150,24 +148,13 @@ public class ChatDetailScript : MonoBehaviour {
 					}
 					userInteration = false;
 				}
-				// foreach (Response response in message.responses) {
-				// 	nextMessage = response.unlock;
-				// 	if (!response.interation) {
-				// 		writeMessage(response.reponse, true, false);
-				// 	} else {
-				// 		while (!userInteration) {
-				// 			yield return null;
-				// 		}
-						
-				// 	}
-				// }
 			} else if (message.number == 99) {
 
 			}
 		}
 	}
 
-	private void Vona(string message, int number) {
+	private string Vona(string message, int number) {
 		switch(number) {
 			case 0:
 			case 1:
@@ -203,9 +190,10 @@ public class ChatDetailScript : MonoBehaviour {
 				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
 			}
 		}
+		return message;
 	}
 
-	private void Helgos(string message, int number) {
+	private string Helgos(string message, int number) {
 		switch(currentMessage.number) {
 			case 1:
 			if (message.Equals(currentMessage.responses[0].reponse)) {
@@ -252,17 +240,60 @@ public class ChatDetailScript : MonoBehaviour {
 				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
 			}
 		}
+		return message;
 	}
 
-	public void Clark(string message, int number) {
+	public string Clark(string message, int number) {
+		switch(currentMessage.number) {
+		}
 
+		if (currentMessage.responses.Length == 1) {
+			nextMessage = currentMessage.responses[0].unlock;
+		} else {
+			if (message == currentMessage.responses[0].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[0].unlock;
+			} else if (message == currentMessage.responses[1].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[1].unlock;
+			} else {
+				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
+			}
+		}
+		return message;
 	}
 
-	public void GaTaah(string message, int number) {
+	public string GaTaah(string message, int number) {
+		switch(currentMessage.number) {
+		}
 
+		if (currentMessage.responses.Length == 1) {
+			nextMessage = currentMessage.responses[0].unlock;
+		} else {
+			if (message == currentMessage.responses[0].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[0].unlock;
+			} else if (message == currentMessage.responses[1].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[1].unlock;
+			} else {
+				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
+			}
+		}
+		return message;
 	}
 
-	public void Incognito(string message, int number) {
+	public string Incognito(string message, int number) {
+		switch(currentMessage.number) {
+		}
 
+		if (currentMessage.responses.Length == 1) {
+			nextMessage = currentMessage.responses[0].unlock;
+		} else {
+			if (message == currentMessage.responses[0].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[0].unlock;
+			} else if (message == currentMessage.responses[1].reponse.ToUpper()) {
+				nextMessage = currentMessage.responses[1].unlock;
+			} else {
+				nextMessage = currentMessage.responses[currentMessage.responses.Length -1].unlock;
+			}
+		}
+		return message;
 	}
 }
