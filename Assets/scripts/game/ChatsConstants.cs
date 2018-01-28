@@ -5,9 +5,9 @@ public class Constants {
 
 	public static int openCharacter = 1;
 
-	public static bool CHARACTER_1_TEXT_1 = true;
-	public static bool CHARACTER_1_TEXT_2 = false;
-	public static bool CHARACTER_1_TEXT_3 = false;
+	public static bool CHARACTER_1_ENDING1 = false;
+	public static bool CHARACTER_1_ENDING2 = false;
+	public static bool CHARACTER_1_ENDING3 = false;
 	public static bool CHARACTER_1_DEATH = false;
 
 	public static bool CHARACTER_2_TEXT_1 = false;

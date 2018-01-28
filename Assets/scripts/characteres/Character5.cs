@@ -7,7 +7,7 @@ public class Character5 : CharacterModel {
 	public Character5() {
 		name = "Incognito";
 		job = "Incognito";
-		imagePath = "";
+		imagePath = "/Assets/Icones Personagens/Character5/Character5.png";
 		messages = new ArrayList() {
 			new Message(0, "Are you happy now?", new Response[] { new Response("", true, 1) }),
 			new Message(1, "That’s what you’ve done. \n That’s all YOUR fault!!", new Response[] { new Response("", true, 2) }),
