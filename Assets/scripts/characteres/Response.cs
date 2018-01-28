@@ -12,7 +12,7 @@ public class Response {
 
 	public CharacterFlag flag;
 
-	public Response(string response, bool interation, int unlock, CharacterFlag flag) {
+	public Response(string response, bool interation, int unlock,CharacterFlag flag) {
 		this.reponse = response;
 		this.interation = interation;
 		this.unlock = unlock;
